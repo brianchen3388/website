@@ -12,6 +12,7 @@ Here, things exist without clear purpose:
 - Meanings are optional 🌀  
 
 It’s a space where curiosity wins over logic.
+*also this is the most ai written thing i've ever read lol
 
 ## ✨ Why?
 
