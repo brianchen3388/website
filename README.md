@@ -28,8 +28,8 @@ Or maybe the reason is to have no reason at all.
 
 ## 🤝 Contributors
 
-- Auston  
-- Brian  
+- Auston He
+- Brian Chen
 
 ---
 
