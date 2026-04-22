@@ -110,12 +110,21 @@ footer {
     margin-top: 20px;
 }
 
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
 .bio-card {
     background: white;
     padding: 25px;
     border-radius: 10px;
     margin: 20px 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: left;
 }
 
 .bio-card h2 {
@@ -134,4 +143,72 @@ footer {
 .bio-name:hover {
     text-decoration: underline;
     color:#2c3e50;
+}
+
+.bio-header {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    font-size: 2em;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #2c3e50;
+    color: white;
+}
+
+.bio-section {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.bio-section h2 {
+    margin-bottom: 10px;
+}
+
+.interests {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.interest-tag {
+    display: inline-block;
+    background: #ecf0f1;
+    color: #2c3e50;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 0.95em;
+}
+
+.secondary-button {
+    margin-top: 30px;
+    border: none;
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.25s ease;
+}
+
+.secondary-button:hover {
+    background-color: #1f2d3b;
+}
+
+.nav-brand a {
+    color: white;
+    text-decoration: none;
 }
