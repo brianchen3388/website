@@ -17,13 +17,14 @@
             background-color: #f5f5f5;
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            flex-direction: column;
         }
         .container {
             max-width: 600px;
+            margin: 90px auto;
+            padding: 40px 20px;
             text-align: center;
+            flex: 1;
         }
         h1 {
             font-size: 2em;
@@ -34,6 +35,12 @@
             color: #666;
             margin-bottom: 15px;
             font-size: 1.1em;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #e8e8e8;
+            margin-top: auto;
         }
         .creators {
             margin-top: 40px;
@@ -64,17 +71,18 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <h1>Just a Random Website...</h1>
         <p>This site was created for absolutely nothing. No purpose, just pure boredom and a desire to build something.</p>
         <p>Sometimes you just need to make a website because you can.</p>
         <p id="tip">If you think you understand this website, you're overthinking it.</p>
-
+    </main>
+    <footer>
         <div class="creators">
             <h2>Creators</h2>
             <p class="creator">Auston He - sparklinghwl@outlook.com</p>
             <p class="creator">Brian Chen - brianchen3388@outlook.com</p>
         </div>
-    </div>
+    </footer>
 </body>
 </html>
