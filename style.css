@@ -14,12 +14,49 @@ body {
     flex-direction: column;
 }
 
+nav {
+    background-color: #2c3e50;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-brand {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-links a.active {
+    color: white;
+}
+
 .container {
     max-width: 600px;
     margin: 90px auto;
     padding: 40px 20px;
     text-align: center;
-    flex: 1;
 }
 
 h1 {
@@ -71,4 +108,30 @@ footer {
     font-size: 0.8em;
     color: #666;
     margin-top: 20px;
+}
+
+.bio-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.bio-card h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.bio-card p {
+    color: #7f8c8d;
+    margin: 0;
+}
+
+.bio-name {
+    text-decoration: none;
+}
+.bio-name:hover {
+    text-decoration: underline;
+    color:#2c3e50;
 }
