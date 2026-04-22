@@ -14,26 +14,37 @@ function setActiveNav(route) {
     });
 }
 
-function bindRouteButtons() {
-    document.querySelectorAll('[data-route]').forEach(button => {
-        button.addEventListener('click', event => {
-            event.preventDefault();
-            const route = button.dataset.route;
-            if (route) {
-                window.location.hash = route;
-            }
-        });
-    });
+function normalizeRoute(route) {
+    if (!route) return 'home';
+    if (route === 'home') return 'home';
+    return route.replace(/^\/|\/$/g, '');
+}
+
+function getCurrentRoute() {
+    const hashRoute = window.location.hash.slice(1).replace(/^\/+|\/+$/g, '');
+    const pathRoute = window.location.pathname.replace(/^\/|\/$/g, '');
+
+    if (hashRoute) {
+        const normalized = normalizeRoute(hashRoute);
+        const path = normalized === 'home' ? '/' : '/' + normalized;
+        history.replaceState({}, '', path);
+        return normalized;
+    }
+
+    if (pathRoute && pathRoute !== 'index.html') {
+        return normalizeRoute(pathRoute);
+    }
+
+    return 'home';
 }
 
 async function loadPage(route) {
     const page = route || 'home';
 
     try {
-        const res = await fetch(`pages/${page}.html`);
+        const res = await fetch(`/pages/${page}.html`);
         if (!res.ok) throw new Error('Page not found');
-        const html = await res.text();
-        app.innerHTML = html;
+        app.innerHTML = await res.text();
     } catch (error) {
         app.innerHTML = `
             <section>
@@ -42,8 +53,6 @@ async function loadPage(route) {
             </section>
         `;
     }
-
-    bindRouteButtons();
 }
 
 async function showPage(route) {
@@ -53,14 +62,21 @@ async function showPage(route) {
     await loadPage(route);
 }
 
-function getCurrentRoute() {
-    const hashRoute = window.location.hash.slice(1).replace(/^\/+|\/+$/g, '');
-    return hashRoute || 'home';
-}
-
 function updateRoute() {
     showPage(getCurrentRoute());
 }
 
-window.addEventListener('hashchange', updateRoute);
+function handleRouteClick(event) {
+    const anchor = event.target.closest('[data-route]');
+    if (!anchor) return;
+
+    event.preventDefault();
+    const route = normalizeRoute(anchor.dataset.route);
+    const path = route === 'home' ? '/' : '/' + route;
+    history.pushState({}, '', path);
+    updateRoute();
+}
+
+window.addEventListener('click', handleRouteClick);
+window.addEventListener('popstate', updateRoute);
 window.addEventListener('DOMContentLoaded', updateRoute);
