@@ -394,6 +394,7 @@ body {
     transition: var(--transition);
     outline: none;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .btn:disabled {

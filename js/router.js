@@ -62,7 +62,7 @@ async function showPage(route) {
     document.title = titleMap[route] || titleMap.home;
     await loadPage(route);
     
-    if (route === 'home' || route === 'todo') {
+    if (route === 'todo') {
         initTodoApp();
     }
 }

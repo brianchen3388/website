@@ -1,45 +1,102 @@
 <div class="page">
-    <section class="hero">
-        <h1>Welcome to Kurrent</h1>
-        <p>Your all-in-one study companion. Stay organized, manage your time, and achieve your goals.</p>
+    <!-- Hero -->
+    <section class="hero" style="padding: 60px 0 50px;">
+        <!-- <div style="display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); box-shadow: var(--shadow-glow); margin-bottom: 28px;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12c3-4 6-4 9 0s6 4 9 0"/>
+            </svg>
+        </div> -->
+        <h1 style="font-size: 3.2rem; font-weight: 800; line-height: 1.1; margin-bottom: 16px; background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            Study smarter.<br>Connect deeper.
+        </h1>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto 32px; line-height: 1.6;">
+            Kurrent is your all-in-one study companion. Organize tasks, manage your time, and achieve your goals — all in one place.
+        </p>
+        <a href="/todo" data-route="todo" class="btn btn-primary" style="font-size: 1.05rem; padding: 12px 28px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Start Your List
+        </a>
     </section>
 
-    <!-- <div class="todo-app">
-        <div class="todo-stats">
-            <div class="stat-card">
-                <div class="stat-value" id="stat-total">0</div>
-                <div class="stat-label">Total</div>
+    <!-- Features -->
+    <section style="padding: 20px 0 50px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+            <div class="card" style="text-align: center; padding: 32px 24px;">
+                <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 11l3 3L22 4"/>
+                        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                    </svg>
+                </div>
+                <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; color: var(--text-primary);">Organize Tasks</h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5;">Keep track of everything you need to do. Add tasks, set times, and check them off as you go.</p>
             </div>
-            <div class="stat-card">
-                <div class="stat-value" id="stat-active">0</div>
-                <div class="stat-label">Active</div>
+
+            <div class="card" style="text-align: center; padding: 32px 24px;">
+                <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; color: var(--text-primary);">Manage Time</h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5;">Set deadlines and schedule tasks so you always know what to focus on next.</p>
             </div>
-            <div class="stat-card">
-                <div class="stat-value" id="stat-completed">0</div>
-                <div class="stat-label">Done</div>
+
+            <div class="card" style="text-align: center; padding: 32px 24px;">
+                <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--success) 0%, #34d399 100%); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                </div>
+                <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; color: var(--text-primary);">Track Progress</h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5;">Watch your completion stats grow. Stay motivated by seeing what you've accomplished.</p>
             </div>
         </div>
+    </section>
 
-        <div class="todo-input-area">
-            <div class="todo-input-row">
-                <input type="text" id="todo-input" placeholder="What do you need to do?" autocomplete="off">
-                <input type="time" id="todo-time" title="Set a time for this task">
-                <button class="btn btn-primary" id="todo-add-btn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                    Add
-                </button>
+    <!-- About / Value prop -->
+    <section style="padding: 20px 0 50px;">
+        <div class="card" style="padding: 40px; background: linear-gradient(135deg, var(--bg-card) 0%, #f5f3ff 100%); border: 1px solid rgba(99,102,241,0.12);">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                <div>
+                    <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; color: var(--text-primary);">Built for students, by students.</h2>
+                    <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+                        Kurrent was born from a simple idea: studying should feel organized, not overwhelming. We stripped away the clutter and built something that just works — clean, fast, and focused on what matters.
+                    </p>
+                    <a href="/bio" data-route="bio" class="btn" style="background: var(--bg-hover); color: var(--text-primary); font-weight: 600;">
+                        Meet the team
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 6px;">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </a>
+                </div>
+                <div style="display: flex; gap: 16px; justify-content: center;">
+                    <div class="stat-card" style="flex: 1; text-align: center; max-width: 140px;">
+                        <div class="stat-value" style="font-size: 2.2rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">∞</div>
+                        <div class="stat-label">Tasks tracked</div>
+                    </div>
+                    <div class="stat-card" style="flex: 1; text-align: center; max-width: 140px;">
+                        <div class="stat-value" style="font-size: 2.2rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">0</div>
+                        <div class="stat-label">Distractions</div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <ul class="todo-list" id="todo-list">
-            <li class="todo-empty">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 11l3 3L22 4"/>
-                    <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
-                </svg>
-                <h3>All caught up!</h3>
-                <p>Add your first task to get started.</p>
-            </li>
-        </ul>
-    </div> -->
+    <!-- Final CTA -->
+    <section style="padding: 30px 0 20px;">
+        <div style="text-align: center; padding: 48px 32px; border-radius: var(--radius-xl); background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: #fff; box-shadow: var(--shadow-lg);">
+            <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; color: #fff;">Ready to get organized?</h2>
+            <p style="font-size: 1.05rem; opacity: 0.9; margin-bottom: 24px; max-width: 400px; margin-left: auto; margin-right: auto;">Jump into your todo list and start making progress today.</p>
+            <a href="/todo" data-route="todo" class="btn" style="background: #fff; color: var(--primary); font-weight: 700; padding: 12px 28px; font-size: 1rem; box-shadow: 0 4px 14px rgba(0,0,0,0.15);">
+                Open Todo App
+            </a>
+        </div>
+    </section>
 </div>
