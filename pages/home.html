@@ -1,4 +1,49 @@
-<h1>Just a Random Website...</h1>
-<p>This site was created for absolutely nothing. No purpose, just pure boredom and a desire to build something.</p>
-<p>Sometimes you just need to make a website because you can.</p>
-<p id="tip"><i>Tip: If you think you understand this website, you're overthinking it.☁️</i></p>
+<div class="page">
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            Study smarter. Connect deeper.
+        </div>
+        <h1>Welcome to Kurrent</h1>
+        <p>Your all-in-one study companion. Stay organized, manage your time, and achieve your goals.</p>
+    </section>
+
+    <div class="todo-app">
+        <div class="todo-stats">
+            <div class="stat-card">
+                <div class="stat-value" id="stat-total">0</div>
+                <div class="stat-label">Total</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-active">0</div>
+                <div class="stat-label">Active</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-completed">0</div>
+                <div class="stat-label">Done</div>
+            </div>
+        </div>
+
+        <div class="todo-input-area">
+            <div class="todo-input-row">
+                <input type="text" id="todo-input" placeholder="What do you need to do?" autocomplete="off">
+                <input type="time" id="todo-time" title="Set a time for this task">
+                <button class="btn btn-primary" id="todo-add-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    Add
+                </button>
+            </div>
+        </div>
+
+        <ul class="todo-list" id="todo-list">
+            <li class="todo-empty">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 11l3 3L22 4"/>
+                    <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                </svg>
+                <h3>All caught up!</h3>
+                <p>Add your first task to get started.</p>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -5,27 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Kurrent</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="nav-brand"><a href="/home" data-route="home">Kurrent</a></div>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="/home" data-route="home">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                <span>Kurrent</span>
+            </a>
+        </div>
         <ul class="nav-links">
-            <li><a href="/home" data-route="home" class="active">Home</a></li>
-            <li><a href="/bio" data-route="bio">Bio</a></li>
+            <li><a href="/home" data-route="home" class="active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                Home
+            </a></li>
+            <li><a href="/bio" data-route="bio">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Contributors
+            </a></li>
         </ul>
     </nav>
     <main class="container">
         <div id="app"></div>
     </main>
-    <footer>
-        <div class="creators">
-            <h2>Creators</h2>
-            <p class="creator">Auston He - sparklinghwl@outlook.com</p>
-            <p class="creator">Brian Chen - brianchen3388@outlook.com</p>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                <span>Kurrent</span>
+            </div>
+            <p class="footer-tagline">Study smarter. Connect deeper.</p>
+            <div class="footer-links">
+                <a href="/home" data-route="home">Home</a>
+                <a href="/bio" data-route="bio">Contributors</a>
+            </div>
+            <p class="footer-copy">Crafted with care by Auston & Brian</p>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/api.js"></script>
     <script src="js/router.js"></script>
 </body>
 </html>
