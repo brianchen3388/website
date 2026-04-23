@@ -231,6 +231,7 @@ function initTodoApp() {
 window.toggleTodo = toggleTodo;
 window.deleteTodo = deleteTodo;
 
+
 // ========================================
 // ROUTER EVENTS
 // ========================================

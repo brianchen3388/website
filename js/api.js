@@ -139,7 +139,7 @@ class ApiClient {
         if (error) throw error;
         return data;
     }
-}
+} 
 
 // ======================================================
 // GLOBAL API INSTANCE (SAFE)
@@ -148,9 +148,9 @@ class ApiClient {
 window.api = window.api ?? new ApiClient();
 
 // test function to verify API is working (remove in production)
-// async function test() {
-//     const users = await api.list("profiles");
-//     console.log("Users:", users);
-// }
+async function test() {
+    const users = await api.list("profiles");
+    console.log("Users:", users);
+}
 
-// test();
+test();
