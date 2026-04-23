@@ -2,7 +2,8 @@ const titleMap = {
     home: 'Kurrent',
     bio: 'Contributors - Kurrent',
     'bio/auston': 'Auston He - Kurrent',
-    'bio/brian': 'Brian Chen - Kurrent'
+    'bio/brian': 'Brian Chen - Kurrent',
+    'todo': 'Todo App - Kurrent'
 };
 
 const navLinks = document.querySelectorAll('.nav-links a');
@@ -61,7 +62,7 @@ async function showPage(route) {
     document.title = titleMap[route] || titleMap.home;
     await loadPage(route);
     
-    if (route === 'home') {
+    if (route === 'home' || route === 'todo') {
         initTodoApp();
     }
 }
