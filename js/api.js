@@ -64,9 +64,14 @@ class ApiClient {
         return data.user;
     }
 
-    async isAuthenticated() {
-        const { data } = await supabaseClient.auth.getSession();
+    isAuthenticated() {
+        const { data } = supabaseClient.auth.getSession();
         return !!data.session;
+    }
+
+    getToken() {
+        const { data } = supabaseClient.auth.getSession();
+        return data.session?.access_token ?? null;
     }
 
     // -------------------------
@@ -125,12 +130,14 @@ class ApiClient {
     }
 
     async remove(table, id) {
-        const { error } = await supabaseClient
+        const { data, error } = await supabaseClient
             .from(table)
             .delete()
-            .eq("id", id);
+            .eq("id", id)
+            .select();
 
         if (error) throw error;
+        return data;
     }
 }
 
@@ -140,9 +147,10 @@ class ApiClient {
 
 window.api = window.api ?? new ApiClient();
 
-async function test() {
-    const users = await api.list("profiles");
-    console.log("Users:", users);
-}
+// test function to verify API is working (remove in production)
+// async function test() {
+//     const users = await api.list("profiles");
+//     console.log("Users:", users);
+// }
 
-test();
+// test();
