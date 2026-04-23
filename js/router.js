@@ -1,8 +1,8 @@
 const titleMap = {
-    home: 'Random Site',
-    bio: 'Bio - Random Site',
-    'bio/auston': 'Auston He - Random Site',
-    'bio/brian': 'Brian Chen - Random Site'
+    home: 'Kurrent',
+    bio: 'Bio - Kurrent',
+    'bio/auston': 'Auston He - Kurrent',
+    'bio/brian': 'Brian Chen - Kurrent'
 };
 
 const navLinks = document.querySelectorAll('.nav-links a');
