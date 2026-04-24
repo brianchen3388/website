@@ -1,0 +1,47 @@
+<div class="page">
+    <div style="max-width: 420px; margin: 0 auto; padding: 32px 20px; text-align: center;">
+        <div id="pomodoro-mode" style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); margin-bottom: 24px;">Focus</div>
+
+        <div style="position: relative; width: 220px; height: 220px; margin: 0 auto 32px;">
+            <svg width="220" height="220" viewBox="0 0 220 220" style="transform: rotate(-90deg);">
+                <circle cx="110" cy="110" r="96" fill="none" stroke="var(--border)" stroke-width="10"/>
+                <circle id="pomodoro-ring" cx="110" cy="110" r="96" fill="none" stroke="url(#pomodoro-gradient)" stroke-width="10" stroke-linecap="round" stroke-dasharray="603.2" stroke-dashoffset="0"/>
+                <defs>
+                    <linearGradient id="pomodoro-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:var(--primary);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:var(--secondary);stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                <div id="pomodoro-time" style="font-size: 3.2rem; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--text-primary); line-height: 1;">25:00</div>
+                <div id="pomodoro-status" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">Ready to focus</div>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; justify-content: center; margin-bottom: 28px;">
+            <button id="pomodoro-start" class="btn btn-primary" style="min-width: 100px;">Start</button>
+            <button id="pomodoro-pause" class="btn" style="background: var(--bg-hover); color: var(--text-primary); min-width: 100px; display: none;">Pause</button>
+            <button id="pomodoro-reset" class="btn" style="background: var(--bg-hover); color: var(--text-primary); min-width: 100px;">Reset</button>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+            <div style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Sessions Completed</div>
+            <div id="pomodoro-sessions" style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">0</div>
+        </div>
+
+        <div class="card" style="padding: 20px; text-align: left;">
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px;">Settings</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div>
+                    <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">Focus (min)</label>
+                    <input type="number" id="pomodoro-work" value="25" min="1" max="60" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.95rem; font-family: inherit; background: var(--bg); color: var(--text-primary);">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">Break (min)</label>
+                    <input type="number" id="pomodoro-break" value="5" min="1" max="30" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.95rem; font-family: inherit; background: var(--bg); color: var(--text-primary);">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

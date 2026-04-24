@@ -21,12 +21,15 @@ website/
 ├── style.css           # Global stylesheet with CSS custom properties
 ├── favicon.svg         # Site favicon (Indigo wave SVG)
 ├── js/
-│   ├── router.js       # Client-side routing, todo app logic, title mapping
-│   └── api.js          # Supabase API abstraction layer (auth + CRUD)
+│   ├── router.js       # Client-side routing engine
+│   ├── api.js          # Supabase API abstraction layer (auth + CRUD)
+│   ├── todo.js         # Todo app logic and localStorage persistence
+│   └── pomodoro.js     # Pomodoro timer logic and state management
 ├── pages/              # HTML fragments dynamically loaded into #app
-│   ├── home.html
+│   ├── home.html       # Toolkit hub / landing page
 │   ├── bio.html
-│   ├── todo.html
+│   ├── todo.html       # Todo list app
+│   ├── pomodoro.html   # Pomodoro timer app
 │   └── bio/
 │       ├── auston.html
 │       └── brian.html
@@ -53,6 +56,7 @@ Routing is handled entirely in `js/router.js`:
 | `/bio/auston`  | `pages/bio/auston.html`    | `bio`      | Auston He - Kurrent       |
 | `/bio/brian`   | `pages/bio/brian.html`     | `bio`      | Brian Chen - Kurrent      |
 | `/todo`        | `pages/todo.html`          | `todo`     | Todo App - Kurrent        |
+| `/pomodoro`    | `pages/pomodoro.html`      | `pomodoro` | Pomodoro - Kurrent        |
 
 All navigation anchors must include `data-route="{route}"` for the router to intercept clicks and handle them via `history.pushState`.
 
@@ -61,9 +65,20 @@ All navigation anchors must include `data-route="{route}"` for the router to int
 ### `js/router.js`
 
 - Contains the full routing engine (`getCurrentRoute`, `loadPage`, `showPage`, `updateRoute`, `handleRouteClick`).
+- Delegates to `initTodoApp()` and `initPomodoro()` when entering those routes.
+- Calls `cleanupPomodoro()` when leaving the pomodoro route to stop the timer interval.
+
+### `js/todo.js`
+
 - Contains the **Todo App** implementation (`initTodoApp`, `renderTodos`, `addTodo`, `toggleTodo`, `deleteTodo`).
 - Todo data is persisted to **`localStorage`** under the key `kurrent_todos`.
-- Todo functions (`toggleTodo`, `deleteTodo`) are exposed on the global `window` object to support inline `onclick` handlers in dynamically injected HTML.
+- Exposes `window.toggleTodo` and `window.deleteTodo` for inline `onclick` handlers in dynamically injected HTML.
+
+### `js/pomodoro.js`
+
+- Contains the **Pomodoro Timer** implementation (`initPomodoro`, `startPomodoro`, `pausePomodoro`, `resetPomodoro`, `renderPomodoro`).
+- Pomodoro state is kept in memory; the timer uses absolute `endTime` so it stays accurate even if the user navigates away and returns.
+- Exposes `window.initPomodoro` and `window.cleanupPomodoro` for the router to call.
 
 ### `js/api.js`
 
